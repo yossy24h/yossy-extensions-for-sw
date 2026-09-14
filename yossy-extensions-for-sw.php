@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       YOSSY Extensions for SW
- * Description:       有料テーマ SWELL の機能を少し便利にするプラグインです。
+ * Description:       有料テーマ SWELL 向けの非公式拡張です。テーマの機能に加え、グループブロックやカスタムHTMLも少し便利にします。
  * Version:           0.2.7
  * Requires at least: 6.0
  * Requires PHP:      7.4
