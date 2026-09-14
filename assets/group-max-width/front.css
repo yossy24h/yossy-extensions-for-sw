@@ -1,0 +1,86 @@
+.wp-block-group.has-yefsw-max-width:not(.is-layout-flex):not(.is-layout-grid) {
+	box-sizing: border-box;
+	max-width: var(--yefsw-group-max-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-block-group.has-yefsw-max-width.has-yefsw-align-left:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.wp-block-group.has-yefsw-max-width.has-yefsw-align-right:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.wp-block-group.has-yefsw-max-width.alignfull:not(.is-layout-flex):not(.is-layout-grid),
+.wp-block-group.has-yefsw-max-width.alignwide:not(.is-layout-flex):not(.is-layout-grid) {
+	max-width: var(--yefsw-group-max-width) !important;
+	width: 100%;
+}
+
+.wp-block-group.has-yefsw-max-width.alignfull.has-yefsw-align-center:not(.is-layout-flex):not(.is-layout-grid),
+.wp-block-group.has-yefsw-max-width.alignwide.has-yefsw-align-center:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.wp-block-group.has-yefsw-max-width.alignfull.has-yefsw-align-left:not(.is-layout-flex):not(.is-layout-grid),
+.wp-block-group.has-yefsw-max-width.alignwide.has-yefsw-align-left:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: 0 !important;
+	margin-right: auto !important;
+}
+
+.wp-block-group.has-yefsw-max-width.alignfull.has-yefsw-align-right:not(.is-layout-flex):not(.is-layout-grid),
+.wp-block-group.has-yefsw-max-width.alignwide.has-yefsw-align-right:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: auto !important;
+	margin-right: 0 !important;
+}
+
+/*
+ * ブロックエディタのフルワイド内では、SWELL がコンテンツサイズに応じて
+ * 子ブロックへ max-width: ... !important を指定する。このグループだけは
+ * カスタム最大幅を優先する。左右揃えの基準は、記事幅・サイト幅・
+ * フルワイドの各コンテンツ領域に合わせる。
+ * data-type 属性は公開側にはないため、以下は編集キャンバスだけに作用する。
+ */
+[data-type="loos/full-wide"] [data-type="core/group"].has-yefsw-max-width:not(.is-layout-flex):not(.is-layout-grid) {
+	max-width: var(--yefsw-group-max-width) !important;
+}
+
+[data-type="loos/full-wide"] [data-type="core/group"].has-yefsw-max-width.has-yefsw-align-center:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+[data-type="loos/full-wide"][data-content-size="article"] [data-type="core/group"].has-yefsw-max-width.has-yefsw-align-left:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: max(0px, calc((100% - var(--block_max_width, 900px)) / 2)) !important;
+	margin-right: auto !important;
+}
+
+[data-type="loos/full-wide"][data-content-size="article"] [data-type="core/group"].has-yefsw-max-width.has-yefsw-align-right:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: auto !important;
+	margin-right: max(0px, calc((100% - var(--block_max_width, 900px)) / 2)) !important;
+}
+
+[data-type="loos/full-wide"][data-content-size="container"] [data-type="core/group"].has-yefsw-max-width.has-yefsw-align-left:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: max(0px, calc((100% - var(--container_size, 1080px)) / 2)) !important;
+	margin-right: auto !important;
+}
+
+[data-type="loos/full-wide"][data-content-size="container"] [data-type="core/group"].has-yefsw-max-width.has-yefsw-align-right:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: auto !important;
+	margin-right: max(0px, calc((100% - var(--container_size, 1080px)) / 2)) !important;
+}
+
+[data-type="loos/full-wide"][data-content-size="full"] [data-type="core/group"].has-yefsw-max-width.has-yefsw-align-left:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: 0 !important;
+	margin-right: auto !important;
+}
+
+[data-type="loos/full-wide"][data-content-size="full"] [data-type="core/group"].has-yefsw-max-width.has-yefsw-align-right:not(.is-layout-flex):not(.is-layout-grid) {
+	margin-left: auto !important;
+	margin-right: 0 !important;
+}

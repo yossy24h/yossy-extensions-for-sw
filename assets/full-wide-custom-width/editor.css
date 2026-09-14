@@ -1,0 +1,36 @@
+.yefsw-fw-custom-width-host {
+	margin: 8px 0 16px;
+}
+
+.yefsw-fw-custom-width__row {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.yefsw-fw-custom-width__label {
+	font-size: 11px;
+	font-weight: 500;
+	line-height: 1.4;
+	margin: 0;
+}
+
+.yefsw-fw-custom-width__input.components-text-control__input {
+	margin: 0;
+	max-width: 88px;
+	min-height: 32px;
+	padding: 4px 8px;
+	width: 88px;
+}
+
+.yefsw-fw-custom-width__unit {
+	font-size: 12px;
+	line-height: 1;
+}
+
+[data-type="loos/full-wide"].has-yefsw-custom-width .swell-block-fullWide__inner > .wp-block:not([data-align="full"]):not([data-align="wide"]):not([data-align="left"]):not([data-align="right"]) {
+	max-width: var(--yefsw-fw-content-width) !important;
+	margin-right: auto;
+	margin-left: auto;
+}

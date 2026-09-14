@@ -1,0 +1,11 @@
+.swell-block-fullWide.has-yefsw-custom-width > .swell-block-fullWide__inner {
+	max-width: none;
+	width: 100%;
+}
+
+.swell-block-fullWide.has-yefsw-custom-width > .swell-block-fullWide__inner > *:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
+	box-sizing: border-box;
+	max-width: var(--yefsw-fw-content-width);
+	margin-right: auto;
+	margin-left: auto;
+}

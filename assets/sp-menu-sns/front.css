@@ -1,0 +1,9 @@
+.yefsw-sp-menu-sns {
+	display: flex;
+	justify-content: center;
+	margin-block-start: 1.5em;
+}
+
+.yefsw-sp-menu-sns .c-iconList {
+	justify-content: center;
+}

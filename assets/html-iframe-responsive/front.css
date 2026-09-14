@@ -1,0 +1,13 @@
+.yefsw-html-responsive iframe,
+.wp-block[data-type="core/html"].has-yefsw-html-responsive iframe {
+	width: 100%;
+	height: auto;
+	aspect-ratio: var(--yefsw-aspect-w) / var(--yefsw-aspect-h);
+}
+
+@media (max-width: 599px) {
+	.yefsw-html-responsive.has-yefsw-html-aspect-sp iframe,
+	.wp-block[data-type="core/html"].has-yefsw-html-responsive.has-yefsw-html-aspect-sp iframe {
+		aspect-ratio: var(--yefsw-aspect-w-sp) / var(--yefsw-aspect-h-sp);
+	}
+}
