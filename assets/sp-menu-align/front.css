@@ -1,0 +1,66 @@
+.yefsw-sp-menu-title-center #sp_menu .p-spMenu__body > .c-widget__title {
+	text-align: center;
+}
+
+.yefsw-sp-menu-title-hide #sp_menu .p-spMenu__body > .c-widget__title {
+	display: none;
+}
+
+.yefsw-sp-menu-nav-center #sp_menu .c-spnav,
+.yefsw-sp-menu-nav-center #sp_menu .c-spnav .menu-item,
+.yefsw-sp-menu-nav-center #sp_menu .c-spnav a {
+	text-align: center;
+}
+
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu a:before {
+	content: none;
+	display: none;
+}
+
+.yefsw-sp-menu-nav-center #sp_menu .c-spnav a,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu a,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu a:hover,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu .children a,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu .sub-menu a,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu .children a:hover,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu .sub-menu a:hover,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu .children ul a,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu .sub-menu ul a,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu .children ul a:hover,
+.yefsw-sp-menu-nav-center #sp_menu .c-listMenu .sub-menu ul a:hover {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.yefsw-sp-menu-nav-noborder #sp_menu .c-spnav a,
+.yefsw-sp-menu-nav-noborder #sp_menu .c-listMenu a {
+	border-bottom: none;
+}
+
+/* 上下に同じ余白を確保し、閉じるボタンの位置は維持する。 */
+.yefsw-sp-menu-vertical-center #sp_menu .p-spMenu__inner {
+	padding-block: var(--logo_size_sp);
+}
+
+.yefsw-sp-menu-vertical-center #sp_menu .p-spMenu__body {
+	display: flex;
+	flex-direction: column;
+	padding-block: 0;
+	overflow-y: auto;
+}
+
+.yefsw-sp-menu-vertical-center #sp_menu .p-spMenu__body > * {
+	flex-shrink: 0;
+}
+
+.yefsw-sp-menu-vertical-center #sp_menu .p-spMenu__nav {
+	margin-top: 0;
+}
+
+/* 余った高さだけを均等配分。内容が高い場合は余白が0になりスクロールできる。 */
+.yefsw-sp-menu-vertical-center #sp_menu .p-spMenu__body::before,
+.yefsw-sp-menu-vertical-center #sp_menu .p-spMenu__body::after {
+	content: "";
+	flex: 0 0 0;
+	margin-block: auto;
+}

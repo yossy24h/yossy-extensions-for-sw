@@ -93,7 +93,7 @@ function yefsw_register_sp_menu_sns( $wp_customize ) {
 		array(
 			'default'           => false,
 			'type'              => 'option',
-			'transport'         => 'refresh',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'yefsw_sanitize_sp_menu_sns',
 		)
 	);
@@ -111,25 +111,54 @@ function yefsw_register_sp_menu_sns( $wp_customize ) {
 	$priority = 10;
 
 	foreach ( $controls as $control ) {
-		if ( 'swell_section_sp_menu' !== $control->section || YEFSW_SP_MENU_SNS_OPTION === $control->id ) {
+		if ( 'swell_section_sp_menu' !== $control->section ) {
+			continue;
+		}
+
+		if ( 0 === strpos( $control->id, 'yefsw_' ) ) {
 			continue;
 		}
 
 		$control->priority = $priority;
 		$priority         += 10;
-
-		if ( 'sub_ttl_acc_sp_submenu' === $control->id ) {
-			$wp_customize->get_control( YEFSW_SP_MENU_SNS_OPTION )->priority = $control->priority + 1;
-		}
 	}
 }
 add_action( 'customize_register', 'yefsw_register_sp_menu_sns', 110 );
 
 /**
+ * SNS 表示チェックをスマホ開閉メニューの一番下へ置く。
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer manager.
+ */
+function yefsw_place_sp_menu_sns_control( $wp_customize ) {
+	$control = $wp_customize->get_control( YEFSW_SP_MENU_SNS_OPTION );
+	if ( ! $control ) {
+		return;
+	}
+
+	$max = 10;
+	foreach ( $wp_customize->controls() as $other ) {
+		if ( 'swell_section_sp_menu' !== $other->section || YEFSW_SP_MENU_SNS_OPTION === $other->id ) {
+			continue;
+		}
+
+		$max = max( $max, (int) $other->priority );
+	}
+
+	$control->priority = $max + 10;
+}
+add_action( 'customize_register', 'yefsw_place_sp_menu_sns_control', 130 );
+
+/**
  * フロント用 CSS / JS。
  */
 function yefsw_enqueue_sp_menu_sns_assets() {
-	if ( ! yefsw_sp_menu_sns_should_render() ) {
+	if ( ! yefsw_sp_menu_sns_is_swell() ) {
+		return;
+	}
+
+	$preview = is_customize_preview();
+	if ( ! $preview && ! yefsw_sp_menu_sns_should_render() ) {
 		return;
 	}
 
@@ -163,7 +192,7 @@ function yefsw_enqueue_sp_menu_sns_assets() {
 	wp_enqueue_script(
 		YEFSW_SP_MENU_SNS_HANDLE,
 		YEFSW_PLUGIN_URL . 'assets/sp-menu-sns/front.js',
-		array(),
+		$preview ? array( 'customize-preview' ) : array(),
 		YEFSW_VERSION,
 		true
 	);
@@ -172,7 +201,8 @@ function yefsw_enqueue_sp_menu_sns_assets() {
 		YEFSW_SP_MENU_SNS_HANDLE,
 		'yefswSpMenuSns',
 		array(
-			'html' => $html,
+			'html'    => $html,
+			'enabled' => yefsw_sanitize_sp_menu_sns( get_option( YEFSW_SP_MENU_SNS_OPTION, false ) ),
 		)
 	);
 }

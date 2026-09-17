@@ -1,20 +1,39 @@
 (function () {
-	function insertSnsList() {
-		var body = document.querySelector(".p-spMenu__body");
-		if (!body || body.querySelector(".yefsw-sp-menu-sns")) {
+	'use strict';
+
+	function updateSnsList(enabled) {
+		var body = document.querySelector('.p-spMenu__body');
+		if (!body) {
 			return;
 		}
 
-		if (!window.yefswSpMenuSns || !yefswSpMenuSns.html) {
+		var list = body.querySelector('.yefsw-sp-menu-sns');
+		if (!enabled) {
+			if (list) {
+				list.remove();
+			}
 			return;
 		}
 
-		body.insertAdjacentHTML("beforeend", yefswSpMenuSns.html);
+		if (!list && window.yefswSpMenuSns && yefswSpMenuSns.html) {
+			body.insertAdjacentHTML('beforeend', yefswSpMenuSns.html);
+		}
 	}
 
-	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", insertSnsList);
+	function init() {
+		updateSnsList(!!(window.yefswSpMenuSns && yefswSpMenuSns.enabled));
+
+		if (window.wp && wp.customize) {
+			wp.customize('yefsw_show_sp_menu_sns', function (setting) {
+				updateSnsList(setting.get());
+				setting.bind(updateSnsList);
+			});
+		}
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', init);
 	} else {
-		insertSnsList();
+		init();
 	}
 })();

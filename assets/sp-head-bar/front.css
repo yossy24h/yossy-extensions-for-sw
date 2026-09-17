@@ -17,3 +17,10 @@
 		display: none !important;
 	}
 }
+
+/* スマホでヘッダーが追従しても、キャッチコピー帯は一緒に固定しない */
+@media (max-width: 959px) {
+	[data-scrolled="true"] .yefsw-sp-head-bar {
+		display: none !important;
+	}
+}

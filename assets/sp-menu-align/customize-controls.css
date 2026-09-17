@@ -1,0 +1,10 @@
+/* SWELL が開いたパネルを overflow:hidden にするため、項目が増えると下が見切れ、スクロールできない */
+#customize-theme-controls #sub-accordion-section-swell_section_sp_menu.customize-pane-child.open {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* SWELL が各コントロールを overflow:hidden にするため、カラーピッカーが見切れる */
+#customize-controls #customize-control-yefsw_sp_menu_border_color {
+	overflow: visible;
+}
