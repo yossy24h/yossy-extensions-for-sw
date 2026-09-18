@@ -24,13 +24,16 @@ function yefsw_sp_head_bar_is_swell() {
 }
 
 /**
- * チェックボックス値を正規化する。
+ * チェックボックス値を 0 / 1 に正規化する。
+ *
+ * option 型設定のプレビューは pre_option フィルターを使う。
+ * false は「保存済みの値を取得する」という予約値なので、オフは整数 0 を返す。
  *
  * @param mixed $value Input value.
- * @return bool
+ * @return int
  */
 function yefsw_sanitize_sp_head_bar( $value ) {
-	return (bool) $value;
+	return (int) (bool) $value;
 }
 
 /**
@@ -119,7 +122,7 @@ function yefsw_register_sp_head_bar( $wp_customize ) {
 	$wp_customize->add_setting(
 		YEFSW_SP_HEAD_BAR_OPTION,
 		array(
-			'default'           => false,
+			'default'           => 0,
 			'type'              => 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'yefsw_sanitize_sp_head_bar',
