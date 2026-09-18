@@ -1,0 +1,70 @@
+.wp-block-table.is-style-yefsw-no-border,
+[data-type="core/table"].is-style-yefsw-no-border {
+	--table-border: none;
+}
+
+.wp-block-table.is-style-yefsw-no-border table,
+[data-type="core/table"].is-style-yefsw-no-border table {
+	border: none;
+	box-shadow: none;
+	table-layout: auto !important;
+}
+
+.wp-block-table.is-style-yefsw-no-border td,
+.wp-block-table.is-style-yefsw-no-border th,
+[data-type="core/table"].is-style-yefsw-no-border td,
+[data-type="core/table"].is-style-yefsw-no-border th {
+	border: none;
+	padding: 0;
+	vertical-align: top;
+}
+
+.wp-block-table.is-style-yefsw-no-border tr:not(:last-child) td,
+.wp-block-table.is-style-yefsw-no-border tr:not(:last-child) th,
+[data-type="core/table"].is-style-yefsw-no-border tr:not(:last-child) td,
+[data-type="core/table"].is-style-yefsw-no-border tr:not(:last-child) th {
+	padding-bottom: 1em;
+}
+
+.wp-block-table.is-style-yefsw-no-border table tr > td:nth-of-type(1),
+.wp-block-table.is-style-yefsw-no-border table tr > th:nth-of-type(1),
+[data-type="core/table"].is-style-yefsw-no-border table tr > td:nth-of-type(1),
+[data-type="core/table"].is-style-yefsw-no-border table tr > th:nth-of-type(1) {
+	padding-right: 1em;
+	white-space: nowrap;
+	word-break: keep-all;
+	overflow-wrap: normal;
+	max-width: none;
+	min-width: max-content !important;
+}
+
+.wp-block-table.is-style-yefsw-no-border table tr > td:nth-of-type(1) .rich-text,
+.wp-block-table.is-style-yefsw-no-border table tr > th:nth-of-type(1) .rich-text,
+.wp-block-table.is-style-yefsw-no-border table tr > td:nth-of-type(1) [contenteditable],
+.wp-block-table.is-style-yefsw-no-border table tr > th:nth-of-type(1) [contenteditable],
+[data-type="core/table"].is-style-yefsw-no-border table tr > td:nth-of-type(1) .rich-text,
+[data-type="core/table"].is-style-yefsw-no-border table tr > th:nth-of-type(1) .rich-text,
+[data-type="core/table"].is-style-yefsw-no-border table tr > td:nth-of-type(1) [contenteditable],
+[data-type="core/table"].is-style-yefsw-no-border table tr > th:nth-of-type(1) [contenteditable] {
+	white-space: nowrap;
+	word-break: keep-all;
+	overflow-wrap: normal;
+}
+
+.wp-block-table.is-style-yefsw-no-border td:not(:nth-of-type(1)),
+.wp-block-table.is-style-yefsw-no-border th:not(:nth-of-type(1)),
+[data-type="core/table"].is-style-yefsw-no-border td:not(:nth-of-type(1)),
+[data-type="core/table"].is-style-yefsw-no-border th:not(:nth-of-type(1)) {
+	text-align: justify;
+	text-align-last: start;
+	text-justify: inter-character;
+}
+
+@media (max-width: 599px) {
+	.wp-block-table.is-style-yefsw-no-border tr:not(:last-child) td:nth-of-type(1),
+	.wp-block-table.is-style-yefsw-no-border tr:not(:last-child) th:nth-of-type(1),
+	[data-type="core/table"].is-style-yefsw-no-border tr:not(:last-child) td:nth-of-type(1),
+	[data-type="core/table"].is-style-yefsw-no-border tr:not(:last-child) th:nth-of-type(1) {
+		padding-bottom: 0;
+	}
+}

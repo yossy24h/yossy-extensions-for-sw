@@ -121,6 +121,7 @@
 			ToggleControl
 				? el(ToggleControl, {
 						label: '[Y]レスポンシブ対応',
+						help: 'Googleマップや YouTube の埋め込みコード向けです。',
 						checked: enabled,
 						onChange: function (next) {
 							var nextAttrs = {};

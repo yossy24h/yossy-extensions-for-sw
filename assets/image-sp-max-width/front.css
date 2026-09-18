@@ -1,0 +1,7 @@
+@media (max-width: 599px) {
+	.wp-block-image.has-yefsw-sp-max-width img,
+	[data-type="core/image"].has-yefsw-sp-max-width img {
+		max-width: var(--yefsw-img-sp-max-width) !important;
+		height: auto !important;
+	}
+}
