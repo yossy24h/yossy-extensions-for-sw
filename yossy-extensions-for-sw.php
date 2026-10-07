@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       YOSSY Extensions for SW
  * Description:       有料テーマ SWELL 専用の非公式拡張です。テーマの設定に加え、グループやカスタムHTMLも少し使いやすくします。
- * Version:           0.2.29
+ * Version:           0.3.2
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            yossy
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'YEFSW_VERSION', '0.2.29' );
+define( 'YEFSW_VERSION', '0.3.2' );
 define( 'YEFSW_PLUGIN_FILE', __FILE__ );
 define( 'YEFSW_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'YEFSW_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -23,6 +23,7 @@ define( 'YEFSW_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
  * Bootstrap.
  */
 function yefsw_bootstrap() {
+	require_once YEFSW_PLUGIN_DIR . 'includes/fixed-cta.php';
 	require_once YEFSW_PLUGIN_DIR . 'includes/full-wide-custom-width.php';
 	require_once YEFSW_PLUGIN_DIR . 'includes/group-max-width.php';
 	require_once YEFSW_PLUGIN_DIR . 'includes/image-sp-max-width.php';
